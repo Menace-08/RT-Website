@@ -1,0 +1,259 @@
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #1b1b1b, black);
+        }
+        .top-row {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 0px;
+            padding: 0px 10px;
+            margin: 0;
+            background: linear-gradient(to right, #1b1b1b, black);
+            color:darkorange; 
+            text-decoration:underline;
+            border-bottom: 6px solid darkorange;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 9998;
+        }
+        /*
+        .top-row-logo {
+            max-width: 45%;
+            max-height: 200px;
+            object-fit: contain;
+            position: relative;
+            right: 18px;
+            margin: 0;
+            image-rendering: crisp-edges;    
+        }
+            */
+        .top-row-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0.75rem;
+            right: 50px;
+            gap: 1px;
+            text-align: left;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+            z-index: 9999;
+        }
+        .hamburger-menu {
+            margin-left: auto;
+            margin-top: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 3px;
+            cursor: pointer;
+            padding: 0px;
+            min-width: 48px;
+            min-height: 48px;
+            position: relative;
+        }
+        .hamburger-menu span {
+            width: 25px;
+            height: 3px;
+            background-color: darkorange;
+            display: block;
+        }
+        .hamburger-dropdown {
+            display: none;
+            position: absolute;
+            background-color: darkorange;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            top: 100%;
+            right: 0;
+            border: 1px solid darkgreen;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+            @keyframes fadeIn {
+                from {opacity: 0;}
+                to {opacity: 1;}
+            }
+            /*
+            @keyframes fadeOut {
+                from {opacity: 1;}
+                to {opacity: 0;}
+            }
+                */
+            @media (max-width: 600px) {
+                .hamburger-dropdown {   
+                    right: -50px;
+                }
+            }
+        .hamburger-dropdown a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            font-weight: bold;
+            margin: 0;
+        }
+        .hamburger-dropdown a:hover {
+            text-decoration: underline;
+            background-color: #f1f1f1;
+            animation: SlideIn 0.5s ease-out;
+            animation: popout 0.5s ease-out;
+            text-decoration-color: black;
+            color: black;
+        }
+        @keyframes SlideIn {
+            from {transform: translateX(-10px); opacity: 0;}
+            to {transform: translateX(0px); opacity: 1;}
+        }
+        @keyframes popout {
+            from {transform: scale(0.95); opacity: 0;}
+            to {transform: scale(1); opacity: 1;}
+            
+        }
+        .hamburger-menu.active .hamburger-dropdown {
+            display: block;
+        }
+        /* Gradient that starts at the right border of the logo and fades to transparent */
+        .top-row {
+            position: sticky;
+            top: 0;
+        }
+        .top-row-logo {
+            position: relative;
+            z-index: 4;
+        }
+        .hamburger-menu:hover .hamburger-dropdown,
+        .hamburger-menu:focus-within .hamburger-dropdown {
+            display: block;
+        }
+        .top-row h1 {
+            margin: 0;
+            font-size: 2rem;
+            text-align: right;
+        }
+        .top-row-contacts h4 {
+            margin: 0;
+            font-size: 1rem;
+            text-align: right;
+            font-weight: 600;
+        }
+        .top-row img {
+            max-width: 75%;
+            width: auto;
+            max-height: 200px;
+            object-fit: contain;
+        }
+        nav {
+            background: linear-gradient(to right, #1b1b1b, black);
+            padding: 1px;
+            color: black;
+            margin: 0;
+        }
+        nav a {
+            color: White;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 600;
+            position: relative;
+        }
+        nav a::after {
+            content:'';
+            position:absolute;
+            left:0;
+            bottom:-5px;
+            width:0;
+            height:2px;
+            background:#ff9800;
+            transition:0.3s;
+        }
+        nav a:hover {
+            transition: 0.3s;
+            color: darkorange;
+        }
+        nav a:hover::after{
+            width:100%;
+            }
+        hr {
+            margin: 0px;
+            border: 0px solid #ccc;
+        }
+        .page-box {
+            position: relative;
+            top: 6rem;
+            padding: 125px;
+            border: 5px solid black;
+            border-radius: 35px;
+            overflow: hidden;
+            background: url('green-field.jpg') center/cover no-repeat;
+            filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 1));
+            filter: brightness(40%);
+            z-index: 0;
+            max-width: 80%;
+            min-width: 80%;
+            max-height: 60%;
+            height: 500px;
+            margin: auto;
+            margin-top: -3.75rem;
+            margin-bottom: 8rem;
+            animation: backgroundAnimation 10s linear infinite;
+        }
+        .page-box::before{
+        content:'';
+        position:absolute;
+        inset:0;
+        background:rgba(0,0,0,0.35);
+        }
+        @keyframes backgroundAnimation {
+            from {background-position: 50% 0;}
+            to {background-position: 100% 100%;}
+        }
+        
+        .page-content h2{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: -5.5rem;
+            margin-top: -2rem;
+            font-size: 1.75rem;
+            padding: 10rem 10rem 1rem 1rem;
+            color: white;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 1);
+            font-weight: 600;
+            z-index: 5;
+        }
+        .page-content p{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 1;
+            margin-top: 12rem;
+            font-size: 1rem;
+            padding: 10rem 10rem 1rem 1rem;
+            color: white;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 1);
+            font-weight: 600;
+            z-index: 5;
+        }
+
+        .card{
+    background: linear-gradient(to right, #1b1b1b);
+    color: DarkOrange;
+    font-weight: 600;
+    border:4px solid black;
+    border-radius:20px;
+    padding:30px;
+    margin:20px;
+    max-width: 60%;
+    transition:0.3s;
+        }
+
+        .card:hover{
+    transform:translateY(-5px);
+        }
